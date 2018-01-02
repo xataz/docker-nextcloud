@@ -3,7 +3,7 @@ FROM xataz/alpine:3.7
 LABEL description="A server software for creating file hosting services" \
       tags="latest 12.0.4 12.0 12" \
       maintainer="xataz <https://github.com/xataz" \
-      build_ver="2017123101"
+      build_ver="2018010201"
 
 ARG NEXTCLOUD_VER=12.0.4
 
@@ -45,6 +45,7 @@ RUN BUILD_DEPS="gnupg \
                 php7-gd \
                 php7-iconv \
                 php7-json \
+                php7-ldap \
                 php7-mbstring \
                 php7-mysqli \
                 php7-opcache \
