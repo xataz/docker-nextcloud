@@ -1,11 +1,11 @@
 FROM xataz/alpine:3.7
 
 LABEL description="A server software for creating file hosting services" \
-      tags="latest 12.0.4 12.0 12" \
+      tags="latest 12.0.5 12.0 12" \
       maintainer="xataz <https://github.com/xataz" \
-      build_ver="2018010201"
+      build_ver="2018020501"
 
-ARG NEXTCLOUD_VER=12.0.4
+ARG NEXTCLOUD_VER=12.0.5
 
 ENV UID=991 \
     GID=991 \
