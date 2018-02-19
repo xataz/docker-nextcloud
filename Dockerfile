@@ -1,9 +1,9 @@
 FROM xataz/alpine:3.7
 
 LABEL description="A server software for creating file hosting services" \
-      tags="latest 12.0.0 13.0 13" \
+      tags="latest 13.0.0 13.0 13" \
       maintainer="xataz <https://github.com/xataz" \
-      build_ver="201802192041"
+      build_ver="201802192048"
 
 ARG NEXTCLOUD_VER=13.0.0
 
