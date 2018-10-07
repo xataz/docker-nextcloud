@@ -23,8 +23,8 @@
 - Environment variables provided (see below).
 
 ### Tags
-- **latest** : latest stable version. (13.0)
-- **13.0** : latest 13.0.x version (stable)
+- **latest** : latest stable version. (14.0)
+- **14.0** : latest 14.0.x version (stable)
 
 
 ### Build-time variables
