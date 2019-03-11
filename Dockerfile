@@ -17,7 +17,8 @@ ENV UID=991 \
     CRON_MEMORY_LIMIT=1g \
     TZ=Etc/UTC \
     DB_TYPE=sqlite3 \
-    DOMAIN=localhost
+    DOMAIN=localhost \
+    REDIS_PORT=6379
 
 RUN BUILD_DEPS="gnupg \
                 tar \
