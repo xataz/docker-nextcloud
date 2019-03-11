@@ -30,11 +30,28 @@ cat > $CONFIGFILE <<EOF;
   'loglevel' => '2',
   'log_rotate_size' => '104857600',
   'memcache.local' => '\OC\Memcache\APCu',
-
   'instanceid' => '$instanceid',
+EOF
+
+if [ ! -z $REDIS_HOST ]; then
+cat >> $CONFIGFILE <<EOF;
+  'memcache.local' => '\OC\Memcache\APCu',
+  'memcache.distributed' => '\OC\Memcache\Redis',
+  'memcache.locking' => '\OC\Memcache\Redis',
+    'redis' =>
+    array (
+      'host' => '$REDIS_HOST',
+      'port' => $REDIS_PORT,
+    ),
 );
 ?>
 EOF
+else
+cat >> $CONFIGFILE <<EOF;
+);
+?>
+EOF
+fi
 
 # Create an auto-configuration file to fill in database settings
 # when the install script is run. Make an administrator account

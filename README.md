@@ -23,8 +23,8 @@
 - Environment variables provided (see below).
 
 ### Tags
-- **latest** : latest stable version. (14.0)
-- **14.0** : latest 14.0.x version (stable)
+- **latest** : latest stable version. (15.0)
+- **15.0** : latest 15.0.x version (stable)
 
 
 ### Build-time variables
@@ -48,6 +48,8 @@
 - **DB_USER** : username for database *(default : none)*
 - **DB_PASSWORD** : password for database user *(default : none)*
 - **DB_HOST** : database host *(default : none)*
+- **REDIS_HOST** : Redis cache serveur
+- **REDIS_PORT** : Redis cache port
 
 Don't forget to use a **strong password** for the admin account!
 
