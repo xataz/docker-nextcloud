@@ -82,6 +82,36 @@ cat >> /app/nextcloud/config/autoconfig.php <<EOF;
 ?>
 EOF
 
+if [[ "$DB_TYPE" == "mysql" ]]; then
+  for i in $(seq 10); do
+    echo "[$i/10] Test db connection ..."
+    php -r "mysqli_connect('$DB_HOST', '$DB_USER', '$DB_PASSWORD') or exit(1);" > /dev/null 2>&1
+    if [[ $? -eq 0 ]]; then
+      echo "Test db connection done"
+      break
+    fi
+    if [[ $i -eq 10 ]]; then
+      echo "Test db connection failed"
+      exit 1
+    fi
+    sleep 5
+  done
+elif [[ "$DB_TYPE" == "pgsql" ]]; then
+  for i in $(seq 10); do
+    echo "[$i/10] Test db connection ..."
+    php -r "pg_connect ('host=$DB_HOST user=$DB_USER password=$DB_PASSWORD') or exit(1);" > /dev/null 2>&1
+    if [[ $? -eq 0 ]]; then
+      echo "Test db connection done"
+      break
+    fi
+    if [[ $i -eq 10 ]]; then
+      echo "Test db connection failed"
+      exit 1
+    fi
+    sleep 5
+  done
+fi
+
 echo "Starting automatic configuration..."
 # Execute ownCloud's setup step, which creates the ownCloud database.
 # It also wipes it if it exists. And it updates config.php with database
