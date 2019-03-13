@@ -64,7 +64,7 @@ cat > /app/nextcloud/config/autoconfig.php <<EOF;
   'directory'     => '/data',
   'dbtype'        => '${DB_TYPE:-sqlite3}',
   'dbname'        => '${DB_NAME:-nextcloud}',
-  'dbuser'        => '${DB_USER:-nextcloud}',
+  'dbuser'        => '${DB_USER}',
   'dbpass'        => '${DB_PASSWORD}',
   'dbhost'        => '${DB_HOST:-nextcloud-db}',
   'dbtableprefix' => 'oc_',
