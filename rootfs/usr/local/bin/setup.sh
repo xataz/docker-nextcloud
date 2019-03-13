@@ -98,7 +98,7 @@ if [[ "$DB_TYPE" == "mysql" ]]; then
   done
 elif [[ "$DB_TYPE" == "pgsql" ]]; then
   for i in $(seq 20); do
-    echo "[$i/10] Test db connection ..."
+    echo "[$i/20] Test db connection ..."
     php -r "pg_connect ('host=$DB_HOST user=$DB_USER password=$DB_PASSWORD') or exit(1);" > /dev/null 2>&1
     if [[ $? -eq 0 ]]; then
       echo "Test db connection done"
@@ -106,6 +106,7 @@ elif [[ "$DB_TYPE" == "pgsql" ]]; then
     fi
     if [[ $i -eq 20 ]]; then
       echo "Test db connection failed"
+      echo "Configuration Failed"
       exit 1
     fi
     sleep 5
